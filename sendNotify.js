@@ -179,7 +179,7 @@ if (process.env.NOTIFY_SHOWNAMETYPE) {
     if (ShowRemarkType == "4")
         console.log("检测到显示备注名称，格式为: 备注");
 }
-async function sendNotify(text, desp, params = {}, author = '\n\n通知设备:', strsummary = "") {
+async function sendNotify(text, desp, params = {}, author = '\n\n运行设备:', strsummary = "") {
     console.log(`开始发送通知...`); 
 	
 	//NOTIFY_FILTERBYFILE代码来自Ca11back.
@@ -934,7 +934,7 @@ function getRemark(strRemark) {
     }
 }
 
-async function sendNotifybyWxPucher(text, desp, PtPin, author = '\n\n通知设备:', strsummary = "") {
+async function sendNotifybyWxPucher(text, desp, PtPin, author = '\n\n运行设备:', strsummary = "") {
 
     try {
         var Uid = "";
@@ -1490,8 +1490,8 @@ function buildLastDesp(desp, author = '') {
     if (process.env.NOTIFY_AUTHOR_BLANK || !author) {
         return desp.trim();
     } else {
-        if (!author.match(/通知设备:/)) {
-            author = `\n\n通知设备: ${author}`
+        if (!author.match(/运行设备:/)) {
+            author = `\n\n运行设备: ${author}`
         }
         return desp.trim() + author + "\n通知时间: " + GetDateTime(new Date());
     }
