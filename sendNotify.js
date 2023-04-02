@@ -1493,7 +1493,7 @@ function buildLastDesp(desp, author = '') {
         if (!author.match(/运行设备:/)) {
             author = `\n\n运行设备: ${author}`
         }
-        return desp.trim() + author + "\n通知时间: " + GetDateTime(new Date());
+        return desp.trim() + author + "\n现在时刻: " + GetDateTime(new Date());
     }
 }
 
